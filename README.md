@@ -40,6 +40,7 @@ This feature helps you search for a medicine in your final inventory using :
 ## Requirements
 
 Refer to the requirements.txt for more information.
+The interface might be displayed differently in different devices due to size constraints.
 
 ## Screenshot 
 
