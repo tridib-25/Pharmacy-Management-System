@@ -40,3 +40,8 @@ This feature helps you search for a medicine in your final inventory using :
 ## Requirements
 
 Refer to the requirements.txt for more information.
+
+## Screenshot 
+
+<img width="1440" alt="Screenshot 2024-07-17 at 4 51 00 PM" src="https://github.com/user-attachments/assets/775198bf-9b60-4ba2-9aaf-6b95599b9c2e">
+
