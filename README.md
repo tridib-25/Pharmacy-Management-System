@@ -37,6 +37,6 @@ This feature helps you search for a medicine in your final inventory using :
   * Lot number
   * Medicine name
 
-## Requirements :
+## Requirements
 
 Refer to the requirements.txt for more information.
