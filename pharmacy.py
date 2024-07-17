@@ -43,14 +43,14 @@ class PharmacyManagementSystem:
 
         # ======leftrightDataframe======================================================================================
         DataFrame=Frame(self.root,bd=10,padx=20,relief=RIDGE)
-        DataFrame.place(x=0,y=75,width=1550,height=390)
+        DataFrame.place(x=0,y=75,width=1440,height=390)
         
         DataFrameLeft=LabelFrame(DataFrame,bg='#00b300',bd=10,padx=20,relief=RIDGE,fg="blue",
                                                 font=("arial",15,"bold"),text="Medicine Information")
-        DataFrameLeft.place(x=-20,y=0,width=760,height=370)
+        DataFrameLeft.place(x=-20,y=0,width=705,height=370)
 
         lblReg=Label(DataFrameLeft,width=27,font=("arial",15,"bold"),text="Pharmacy Management System",fg="red",padx=2,bg="white")
-        lblReg.place(x=385,y=155)
+        lblReg.place(x=340,y=155)
 
         # =======images=======================================================
 
@@ -64,42 +64,42 @@ class PharmacyManagementSystem:
         img2 = img2.resize((150,135), Image.Resampling.LANCZOS)
         self.photoImg2 =  ImageTk.PhotoImage(img2)
         b4 =Button(self.root,image=self.photoImg2,text="Pharmacy",borderwidth=0,font=("arial",22,"bold"),fg="white",cursor="hand2")
-        b4.place(x=560,y=295)
+        b4.place(x=515,y=295)
 
         img4 = Image.open("medicines.jpg")
         img4 = img4.resize((150,135), Image.Resampling.LANCZOS)
         self.photoImg4 =  ImageTk.PhotoImage(img4)
         b5 =Button(self.root,image=self.photoImg4,text="Pharmacy",borderwidth=0,font=("arial",22,"bold"),fg="white",cursor="hand2")
-        b5.place(x=390,y=295)
+        b5.place(x=345,y=295)
         # ===========Buttonframe=================================================================================
         ButtonFrame=Frame(self.root,bg='#8600b3',bd=10,padx=20,relief=RIDGE)
-        ButtonFrame.place(x=0,y=465,width=1550,height=85)
+        ButtonFrame.place(x=0,y=465,width=1440,height=85)
 
         # ========MainButtons=======
         btnAddData=ttk.Button(ButtonFrame,command=self.add_data,text="ADD MEDICINE",width=10)
-        btnAddData.grid(row=0,column=0,padx=14,pady=18)
+        btnAddData.grid(row=0,column=0,padx=8,pady=18)
 
         btnUpdateMed=ttk.Button(ButtonFrame,command=self.update_data,text="UPDATE",width=10)
-        btnUpdateMed.grid(row=0,column=1,padx=14,pady=18)
+        btnUpdateMed.grid(row=0,column=1,padx=8,pady=18)
 
         btnDeleteMed=ttk.Button(ButtonFrame,command=self.mDelete,text="DELETE",width=10)
-        btnDeleteMed.grid(row=0,column=2,padx=14,pady=18)
+        btnDeleteMed.grid(row=0,column=2,padx=8,pady=18)
 
         btnRestMed=ttk.Button(ButtonFrame,command=self.Reset,text="RESET",width=10)
-        btnRestMed.grid(row=0,column=3,padx=14,pady=18)
+        btnRestMed.grid(row=0,column=3,padx=8,pady=18)
 
         btnExitMed=ttk.Button(ButtonFrame,command=self.iExit,text="EXIT",width=10)
-        btnExitMed.grid(row=0,column=4,padx=14,pady=18)
+        btnExitMed.grid(row=0,column=4,padx=8,pady=18)
 
         # ==========Search By========
         lblSearch=Label(ButtonFrame,font=("arial",17,"bold"),text="Search By",padx=2)
-        lblSearch.grid(row=0,column=5,sticky=W,padx=14,pady=18)
+        lblSearch.grid(row=0,column=5,sticky=W,padx=8,pady=18)
 
         # variable
         self.serch_var=StringVar()
         search_combo=ttk.Combobox(ButtonFrame,textvariable=self.serch_var,width=10,font=("arial",15),state="readonly")
         search_combo['values']=("Select Option","Ref","medname","lot")
-        search_combo.grid(row=0,column=6,sticky=W,padx=14,pady=18)
+        search_combo.grid(row=0,column=6,sticky=W,padx=8,pady=18)
         search_combo.current(0)
 
         self.serchTxt_var=StringVar()
@@ -108,17 +108,17 @@ class PharmacyManagementSystem:
 
 
         btnExit=ttk.Button(ButtonFrame,command=self.search_data,text="SEARCH",width=10)
-        btnExit.grid(row=0,column=8,padx=14,pady=18)
+        btnExit.grid(row=0,column=8,padx=8,pady=18)
 
         btnExit=ttk.Button(ButtonFrame,command=self.fatch_data,text="SHOW ALL",width=10)
-        btnExit.grid(row=0,column=9,padx=14,pady=18)
+        btnExit.grid(row=0,column=9,padx=8,pady=18)
 
         # ===================Details Frame===================================================================================
         # ===================Main Labels And enty=========================================================================
         FrameDetails=Frame(self.root,bd=15,padx=20,relief=RIDGE)
-        FrameDetails.place(x=0,y=550,width=1550,height=248)
+        FrameDetails.place(x=0,y=550,width=1440,height=248)
 
-        conn=mysql.connector.connect(host="localhost",user="dbms",password="test123",database="management")
+        conn=mysql.connector.connect(host="localhost",user="root",password="",database="management")
         my_cursor=conn.cursor()
         my_cursor.execute("select ref from medicine")
         r=my_cursor.fetchall()
@@ -147,7 +147,7 @@ class PharmacyManagementSystem:
         comTypeofMedicine.grid(row=2,column=1)
 
         # ==========AddMedicine============
-        conn=mysql.connector.connect(host="localhost",user="dbms",password="test123",database="management")
+        conn=mysql.connector.connect(host="localhost",user="root",password="",database="management")
         my_cursor=conn.cursor()
         my_cursor.execute("select MedicineName from medicine")
         ide=my_cursor.fetchall()
@@ -213,7 +213,7 @@ class PharmacyManagementSystem:
 
         DataFrameRight=LabelFrame(DataFrame,bg="#2eb8b8",bd=12,padx=20,relief=RIDGE,fg="blue",
                                             font=("arial",15,"bold"),text="New Medicine Add Department")
-        DataFrameRight.place(x=740,y=0,width=770,height=370)
+        DataFrameRight.place(x=685,y=0,width=715,height=370)
 
         # =====Inside label and entry ================================================
         # ============variables medicine=============
@@ -228,7 +228,7 @@ class PharmacyManagementSystem:
         img6 = img6.resize((180,100), Image.Resampling.LANCZOS)
         self.photoImg6 =  ImageTk.PhotoImage(img6)
         b6 =Button(self.root,image=self.photoImg6,text="Pharmay",borderwidth=0,font=("arial",22,"bold"),fg="white",cursor="hand2")
-        b6.place(x=1285,y=120)
+        b6.place(x=1220,y=120)
 
         
         '''img7 = Image.open("tab.jpg")
@@ -279,7 +279,7 @@ class PharmacyManagementSystem:
         # ================================== Medicine Add button=============================================================
 
         down_frame=Frame(DataFrameRight,bd=4,relief=RIDGE,bg="#00b300")
-        down_frame.place(x=500,y=140,width=150,height=170)
+        down_frame.place(x=490,y=140,width=150,height=170)
 
         add_btn=ttk.Button(down_frame,text="ADD",command=self.add_medicine,width=10) 
         add_btn.grid(row=0,column=0,pady=6,padx=5)
@@ -296,7 +296,7 @@ class PharmacyManagementSystem:
    
         # =======Scrollbar and Main Table=====================================================================================
         Table_frame=Frame(FrameDetails,bd=6,relief=RIDGE,bg="powder blue")
-        Table_frame.place(x=-18,y=1,width=1518,height=215)
+        Table_frame.place(x=-18,y=1,width=1408,height=215)
 
         scroll_x=ttk.Scrollbar(Table_frame,orient=HORIZONTAL)
         scroll_y=ttk.Scrollbar(Table_frame,orient=VERTICAL)
@@ -346,7 +346,7 @@ class PharmacyManagementSystem:
 
     # ===================== MedicineAdd=================================================================      
     def add_medicine(self):
-        conn=mysql.connector.connect(host="localhost",user="dbms",password="test123",database="management")
+        conn=mysql.connector.connect(host="localhost",user="root",password="",database="management")
         my_cursor=conn.cursor()
         my_cursor.execute("insert into medicine(ref,MedicineName) values(%s,%s)",(                                                        
                                                                             self.ref_add_var.get(),
@@ -366,7 +366,7 @@ class PharmacyManagementSystem:
     # ===================fetch data ============================================================
 
     def fetch_Medicine_data(self):
-        conn=mysql.connector.connect(host='localhost',user='dbms',password='test123',database='management')
+        conn=mysql.connector.connect(host='localhost',user='root',password='',database='management')
         my_cursor=conn.cursor()
         my_cursor.execute("select * from medicine")
         rows=my_cursor.fetchall()
@@ -394,7 +394,7 @@ class PharmacyManagementSystem:
     def medDelete(self):
         mDelete=messagebox.askyesno("Pharmacy Management System","Do you want to delete this medicine?")
         if mDelete>0:
-            conn=mysql.connector.connect(host="localhost",user="dbms",password="test123",database="management")
+            conn=mysql.connector.connect(host="localhost",user="root",password="",database="management")
             my_cursor=conn.cursor()
             sql="delete from medicine where ref=%s"
             val=(self.ref_add_var.get(),)
@@ -413,7 +413,7 @@ class PharmacyManagementSystem:
                 messagebox.showwarning("Warning","All fields are required")
             else:
                 try:
-                    conn=mysql.connector.connect(host="localhost",user="dbms",password="test123",database="management")
+                    conn=mysql.connector.connect(host="localhost",user="root",password="",database="management")
                     my_cursor=conn.cursor()
                     my_cursor.execute("update medicine set MedicineName=%s where ref=%s",(
                                                                                             self.medicine_add_var.get(),
@@ -437,7 +437,7 @@ class PharmacyManagementSystem:
         
         else:
             try:
-                conn=mysql.connector.connect(host="localhost",user="dbms",password="test123",database="management")
+                conn=mysql.connector.connect(host="localhost",user="root",password="",database="management")
                 my_cursor=conn.cursor()
                 my_cursor.execute("insert into pharmacy values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",(
                 
@@ -469,7 +469,7 @@ class PharmacyManagementSystem:
         if self.ref_var.get()=="":
             messagebox.showerror("Error","All Fields Are Required")
         else:
-            conn=mysql.connector.connect(host='localhost',user='dbms',password='test123',database='management')
+            conn=mysql.connector.connect(host='localhost',user='root',password='',database='management')
             my_cursor=conn.cursor()
             my_cursor.execute("update pharmacy set CompanyName=%s,TypeOfMedicine=%s,medname=%s,lot=%s,issuedate=%s,expdate=%s,uses=%s,sideeffect=%s,warning=%s,dosage=%s,price=%s,product=%s where Ref=%s",(
                                                                                 
@@ -502,7 +502,7 @@ class PharmacyManagementSystem:
 
     # ====================fetchdata=================================================
     def fatch_data(self):
-        conn=mysql.connector.connect(host="localhost",user="dbms",password="test123",database="management")
+        conn=mysql.connector.connect(host="localhost",user="root",password="",database="management")
         my_cursor=conn.cursor()
         my_cursor.execute("select * from pharmacy")
         rows=my_cursor.fetchall()
@@ -538,7 +538,7 @@ class PharmacyManagementSystem:
         if self.lot_var.get()=="":
             messagebox.showinfo("ERROR","First Select the Details!!")
         else:
-            conn=mysql.connector.connect(host='localhost',user='dbms',password='test123',database='management')
+            conn=mysql.connector.connect(host='localhost',user='root',password='',database='management')
             my_cursor=conn.cursor()
             query="delete from pharmacy where Ref=%s"
             value=(self.ref_var.get(),)
@@ -575,7 +575,7 @@ class PharmacyManagementSystem:
 
    
     def search_data(self):
-        conn=mysql.connector.connect(host='localhost',user='dbms',password='test123',database='management')
+        conn=mysql.connector.connect(host='localhost',user='root',password='',database='management')
         my_cursor=conn.cursor()
         my_cursor.execute("select * from pharmacy where " +str(self.serch_var.get())+" LIKE '%"+str(self.serchTxt_var.get())+"%'")
         rows=my_cursor.fetchall()
