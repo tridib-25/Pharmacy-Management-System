@@ -1,6 +1,6 @@
 # Pharmacy-Management-System : Project Overview :
 
-Welcome to the Pharmacy Management System! This application allows you to efficiently manage your pharmacy's medicine inventory. You can easily add new medicines, update existing ones, and keep track of all your medicines. The system is divided into three main sections:
+Welcome to the Pharmacy Management System! This project is designed as an introduction to databases, MySQL, and Python with Tkinter GUI. This application allows you to efficiently manage your pharmacy's medicine inventory. You can easily add new medicines, update existing ones, and keep track of all your medicines. The system is divided into three main sections:
 
 ## Sections of the App
 
@@ -36,3 +36,7 @@ This feature helps you search for a medicine in your final inventory using :
   * Reference number
   * Lot number
   * Medicine name
+
+## Requirements :
+
+Refer to the requirements.txt for more information.
