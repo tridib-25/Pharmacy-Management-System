@@ -1,0 +1,14 @@
+Software Requirement :
+
+	1. IDE - VSCode or Pycharm
+	2. Xampp for MYSQL
+
+Frontend Language : Python
+Backend Database : MySQL
+
+Packages :
+
+	1. pip install pillow
+	2. pip install mysql-connector-python
+	3. Install tkinter 
+	4. Install all the required packages used in the import section
