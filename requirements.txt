@@ -17,6 +17,9 @@ Steps :
 
 1. Download MySQL Community Server
 2. Download XAMPP : Start the Apache and MySQL servers.
-3. Update MySQL User and Password : If you have set a password for your MySQL user account or use a username other than 'root', update the user and password in the code wherever the conn connection is established.
+3. Open Xampp and click on "Go to Application" then click on "phpMyAdmin".
+4. Now create a new database named "management". Then go to "Import" tab and import the "management.sql" file.
+5. You can also create a new user with a new password in the "User Accounts" tab.
+6. Update MySQL User and Password : If you have set a password for your MySQL user account or use a username other than 'root', update the user and password in the code wherever the conn connection (conn=mysql.connector.connect(host="localhost",user="root",password="",database="management")) is established.
 By default, the user is root with no password set.
-4. Run the code! Enjoy!
+7. Run the code! Enjoy!
