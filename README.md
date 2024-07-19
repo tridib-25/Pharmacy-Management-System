@@ -45,6 +45,7 @@ Software Requirement :
 2. Xampp for MYSQL
 
 Frontend Language : Python
+
 Backend Database : MySQL
 
 Packages :
