@@ -37,10 +37,35 @@ This feature helps you search for a medicine in your final inventory using :
   * Lot number
   * Medicine name
 
-## Requirements
+## Steps to run the application
 
-Refer to the requirements.txt for more information.
-The interface might be displayed differently in different devices due to size constraints.
+Software Requirement :
+
+1. IDE - VSCode or Pycharm
+2. Xampp for MYSQL
+
+Frontend Language : Python
+Backend Database : MySQL
+
+Packages :
+
+1. Install the required packages by running the following command :
+   ```bash
+   pip install -r requirements.txt
+   ```
+2. Install tkinter 
+3. Install all the required packages used in the import section
+
+Steps :
+
+1. Download MySQL Community Server
+2. Download XAMPP : Start the Apache and MySQL servers.
+3. Open Xampp and click on "Go to Application" then click on "phpMyAdmin".
+4. Now create a new database named "management". Then go to the "Import" tab and import the "management.sql" file.
+5. You can also create a new user with a new password in the "User Accounts" tab.
+6. Update MySQL User and Password : If you have set a password for your MySQL user account or use a username other than 'root', update the user and password in the code wherever the conn connection (conn=mysql.connector.connect(host="localhost",user="root",password="",database="management")) is established.
+By default, the user is root with no password set.
+7. Run the code! Enjoy!
 
 ## Screenshot 
 
