@@ -1,25 +1,2 @@
-Software Requirement :
-
-	1. IDE - VSCode or Pycharm
-	2. Xampp for MYSQL
-
-Frontend Language : Python
-Backend Database : MySQL
-
-Packages :
-
-	1. pip install pillow
-	2. pip install mysql-connector-python
-	3. Install tkinter 
-	4. Install all the required packages used in the import section
-
-Steps :
-
-1. Download MySQL Community Server
-2. Download XAMPP : Start the Apache and MySQL servers.
-3. Open Xampp and click on "Go to Application" then click on "phpMyAdmin".
-4. Now create a new database named "management". Then go to the "Import" tab and import the "management.sql" file.
-5. You can also create a new user with a new password in the "User Accounts" tab.
-6. Update MySQL User and Password : If you have set a password for your MySQL user account or use a username other than 'root', update the user and password in the code wherever the conn connection (conn=mysql.connector.connect(host="localhost",user="root",password="",database="management")) is established.
-By default, the user is root with no password set.
-7. Run the code! Enjoy!
+pillow
+mysql-connector-python
